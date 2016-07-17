@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FBClient.Views.FBAppInfoPage"
+             BindingContext="{Binding [FBAppInfoViewModel], Source={StaticResource ViewModelLocator}}"
+             >
+  <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
+    <Label FontSize="20" Text="Providing the mandatory values and clicking on the Send button you request to connect to Facebook, to locate the posted topic, to download the comments of found topic and finally to save that data in XML file on the web server." />
+    <Entry Placeholder="Facebook Application ID" Text="{Binding AppId, Mode=TwoWay}" Keyboard="Numeric" WidthRequest="300" />
+    <Entry Placeholder="Facebook Application Secret Key" Text="{Binding AppSecretKey, Mode=TwoWay}" Keyboard="Text" WidthRequest="300"/>
+    <Entry Placeholder="Facebook Page ID" Text="{Binding PageId, Mode=TwoWay}" Keyboard="Numeric" WidthRequest="300"/>
+    <Entry Placeholder="Posted topic filter" Text="{Binding TopicFilter, Mode=TwoWay}" Keyboard="Text" WidthRequest="300"/>
+    <Button Text="Send" Command="{Binding SendCommand}" />
+  </StackLayout>
+</ContentPage>
